@@ -1,6 +1,6 @@
 package com.assignment.vikingline.inventory;
 
-import com.assignment.vikingline.bubblesort.Sorter;
+import com.assignment.vikingline.bubblesort.BubbleSort;
 import com.assignment.vikingline.models.Item;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class Inventory {
             );
         }
 
-        return Sorter.bubbleSortByName(
+        return BubbleSort.bubbleSortByName(
                 new ArrayList<>(currentInventoryMap.values())
         );
     }

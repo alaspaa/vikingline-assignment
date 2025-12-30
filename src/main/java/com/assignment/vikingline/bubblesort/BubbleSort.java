@@ -5,7 +5,7 @@ import com.assignment.vikingline.models.NamedObject;
 import java.util.Collections;
 import java.util.List;
 
-public class Sorter {
+public class BubbleSort {
 
     public static <T extends NamedObject> List<T> bubbleSortByName(List<T> list) {
         boolean sorted = true;

@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.assignment.vikingline.bubblesort.Sorter.bubbleSortByName;
+import static com.assignment.vikingline.bubblesort.BubbleSort.bubbleSortByName;
 
-public class SorterTest {
+public class BubbleSortTest {
 
     @Test
     public void givenListOfNames_whenBubbleSortByNameIsCalled_thenSortedListIsReturned() {
