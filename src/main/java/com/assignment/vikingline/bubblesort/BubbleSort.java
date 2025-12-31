@@ -9,7 +9,7 @@ public class BubbleSort {
 
     public static <T extends NamedObject> List<T> bubbleSortByName(List<T> list) {
         boolean sorted = true;
-        for(int currentIndex  = 0; currentIndex < list.size() -1; currentIndex++) {
+        for (int currentIndex = 0; currentIndex < list.size() - 1; currentIndex++) {
             int nextIndex = currentIndex + 1;
 
             int comparisonResult = list.get(currentIndex).getObjectName()
@@ -24,7 +24,7 @@ public class BubbleSort {
             }
         }
 
-        if(!sorted) {
+        if (!sorted) {
             bubbleSortByName(list);
         }
 

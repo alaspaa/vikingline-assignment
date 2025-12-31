@@ -28,14 +28,15 @@ public class Inventory {
 
     private static Map<String, Item> createInventoryMapFromList(List<Item> inventoryList) {
         Map<String, Item> inventoryMap = new HashMap<>(inventoryList.size());
-        for(Item item : inventoryList) {
-            if(!inventoryMap.containsKey(item.name())) {
+        for (Item item : inventoryList) {
+            if (!inventoryMap.containsKey(item.name())) {
                 inventoryMap.put(item.name(), item);
             } else {
                 inventoryMap.put(
                         item.name(),
-                        new Item(item.name(),
-                        inventoryMap.get(item.name()).quantity() + item.quantity()
+                        new Item(
+                                item.name(),
+                                inventoryMap.get(item.name()).quantity() + item.quantity()
                         )
                 );
             }
@@ -49,6 +50,9 @@ public class Inventory {
             return incomingItem;
         }
 
-        return new Item(incomingItem.name(), currentItem.quantity() + incomingItem.quantity());
+        return new Item(
+                incomingItem.name(),
+                currentItem.quantity() + incomingItem.quantity()
+        );
     }
 }

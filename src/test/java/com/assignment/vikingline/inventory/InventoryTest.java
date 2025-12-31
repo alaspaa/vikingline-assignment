@@ -12,32 +12,35 @@ import static com.assignment.vikingline.inventory.Inventory.updateInventory;
 
 public class InventoryTest {
     @Test
-    public void givenIncomingInventory_whenUpdateInventory_thenUpdateInventory() {
-        List<Item> givenCurrentList = new ArrayList<>(Arrays.asList(
-                new Item("Bowlingklot",21),
-                new Item("FotBoll",2),
-                new Item("PingisBoll",1),
-                new Item("Tennisboll",5)
-            )
+    public void givenAValidIncomingInventoryList_whenUpdateInventoryIsCalled_thenUpdatedInventoryListIsReturned() {
+        List<Item> givenCurrentList = new ArrayList<>(
+                Arrays.asList(
+                        new Item("Bowlingklot", 21),
+                        new Item("FotBoll", 2),
+                        new Item("PingisBoll", 1),
+                        new Item("Tennisboll", 5)
+                )
         );
 
-        List<Item> givenIncomingList = new ArrayList<>(Arrays.asList(
-                new Item("StudsBoll",4),
-                new Item("FotBoll",5),
-                new Item("Tennisboll",2),
-                new Item("Bowlingklot",7),
-                new Item("Badboll",11)
-        )
+        List<Item> givenIncomingList = new ArrayList<>(
+                Arrays.asList(
+                        new Item("StudsBoll", 4),
+                        new Item("FotBoll", 5),
+                        new Item("Tennisboll", 2),
+                        new Item("Bowlingklot", 7),
+                        new Item("Badboll", 11)
+                )
         );
 
-        List<Item> expectedList = new ArrayList<>(Arrays.asList(
-                new Item("Badboll",11),
-                new Item("Bowlingklot",28),
-                new Item("FotBoll",7),
-                new Item("PingisBoll",1),
-                new Item("StudsBoll",4),
-                new Item("Tennisboll",7)
-        )
+        List<Item> expectedList = new ArrayList<>(
+                Arrays.asList(
+                        new Item("Badboll", 11),
+                        new Item("Bowlingklot", 28),
+                        new Item("FotBoll", 7),
+                        new Item("PingisBoll", 1),
+                        new Item("StudsBoll", 4),
+                        new Item("Tennisboll", 7)
+                )
         );
 
         List<Item> result = updateInventory(givenCurrentList, givenIncomingList);
@@ -46,34 +49,37 @@ public class InventoryTest {
     }
 
     @Test
-    public void givenInventoryContainsDuplicates_wheUpdateInventory_thenReturnUpdatedInventory() {
-        List<Item> givenCurrentList = new ArrayList<>(Arrays.asList(
-                new Item("Bowlingklot",15),
-                new Item("FotBoll",2),
-                new Item("PingisBoll",1),
-                new Item("Tennisboll",5),
-                new Item("Bowlingklot",6)
-        )
+    public void givenInventoryContainsDuplicates_wheUpdateInventoryIsCalled_thenUpdatedInventoryListIsReturned() {
+        List<Item> givenCurrentList = new ArrayList<>(
+                Arrays.asList(
+                        new Item("Bowlingklot", 15),
+                        new Item("FotBoll", 2),
+                        new Item("PingisBoll", 1),
+                        new Item("Tennisboll", 5),
+                        new Item("Bowlingklot", 6)
+                )
         );
 
-        List<Item> givenIncomingList = new ArrayList<>(Arrays.asList(
-                new Item("StudsBoll",4),
-                new Item("FotBoll",5),
-                new Item("Tennisboll",2),
-                new Item("Bowlingklot",7),
-                new Item("Badboll",7),
-                new Item("Badboll",4)
-        )
+        List<Item> givenIncomingList = new ArrayList<>(
+                Arrays.asList(
+                        new Item("StudsBoll", 4),
+                        new Item("FotBoll", 5),
+                        new Item("Tennisboll", 2),
+                        new Item("Bowlingklot", 7),
+                        new Item("Badboll", 7),
+                        new Item("Badboll", 4)
+                )
         );
 
-        List<Item> expectedList = new ArrayList<>(Arrays.asList(
-                new Item("Badboll",11),
-                new Item("Bowlingklot",28),
-                new Item("FotBoll",7),
-                new Item("PingisBoll",1),
-                new Item("StudsBoll",4),
-                new Item("Tennisboll",7)
-        )
+        List<Item> expectedList = new ArrayList<>(
+                Arrays.asList(
+                        new Item("Badboll", 11),
+                        new Item("Bowlingklot", 28),
+                        new Item("FotBoll", 7),
+                        new Item("PingisBoll", 1),
+                        new Item("StudsBoll", 4),
+                        new Item("Tennisboll", 7)
+                )
         );
 
         List<Item> result = updateInventory(givenCurrentList, givenIncomingList);

@@ -5,6 +5,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.assignment.vikingline.bubblesort.BubbleSort.bubbleSortByName;
@@ -13,17 +14,23 @@ public class BubbleSortTest {
 
     @Test
     public void givenListOfNames_whenBubbleSortByNameIsCalled_thenSortedListIsReturned() {
-        List<Person> unsortedList = new ArrayList<>(4);
-        unsortedList.add(new Person("Liisa"));
-        unsortedList.add(new Person("Pelle"));
-        unsortedList.add(new Person("Anna"));
-        unsortedList.add(new Person("Kalle"));
+        List<Person> unsortedList = new ArrayList<>(
+                Arrays.asList(
+                        new Person("Liisa"),
+                        new Person("Pelle"),
+                        new Person("Anna"),
+                        new Person("Kalle")
+                )
+        );
 
-        List<Person> expectedList = new ArrayList<>(4);
-        expectedList.add(new Person("Anna"));
-        expectedList.add(new Person("Kalle"));
-        expectedList.add(new Person("Liisa"));
-        expectedList.add(new Person("Pelle"));
+        List<Person> expectedList = new ArrayList<>(
+                Arrays.asList(
+                        new Person("Anna"),
+                        new Person("Kalle"),
+                        new Person("Liisa"),
+                        new Person("Pelle")
+                )
+        );
 
         List<Person> result = bubbleSortByName(unsortedList);
 

@@ -2,10 +2,11 @@ package com.assignment.vikingline.models;
 
 import org.jspecify.annotations.NonNull;
 
-public record Item (
-    @NonNull String name,
-    @NonNull int quantity
+public record Item(
+        @NonNull String name,
+        int quantity
 ) implements NamedObject {
+
     public String getObjectName() {
         return name;
     }
